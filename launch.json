@@ -1,0 +1,24 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "ConditionalsToken",
+    "name": "Conditionals",
+    "symbol": "COND",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0x5f7bb59365ce557c26dbcaa4ee9d39a4b95b7127",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "economics": {
+    "poolBps": 8000,
+    "initialMarketCapWei": "3000000000000000000000",
+    "remainderTo": "0x612a9bb008e16ef2d24f41dae9fc661831d93367"
+  },
+  "notes": "ConditionalsToken (src/ConditionalsToken.sol) is a fixed-supply ERC-20 built on the vendored OpenZeppelin Contracts v5.4.0 ERC20. Its constructor takes no arguments and mints the whole supply of 1,000,000,000 COND (1000000000000000000000000000 minor units, 18 decimals) once to msg.sender, which on this launch is the ProjectFactory. There is no owner, minter, pauser, blacklist, freeze, fee, tax, burn-on-transfer, reflection, upgrade path, delegatecall or selfdestruct, so totalSupply never grows and every transfer delivers exactly the amount sent. The factory's launch flows (the swarm's share to the MerkleDistributor, the pool seed through the PoolManager and the remainder to economics.remainderTo) therefore move exactly what they say without any exemption list. No application contracts are deployed with this launch and no initialization calls are made. The pool pairs with IMD at pool.pairedCurrency at the launch policy's 1.25% fee with tick spacing 60; pool.initialPrice is provenance only, the deployer derives the opening price from economics.initialMarketCapWei and token.totalSupply."
+}
